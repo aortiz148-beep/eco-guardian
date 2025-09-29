@@ -69,3 +69,37 @@
     }
   </script>
 </body>
+<section id="encuesta">
+  <h2>📋 Encuesta de Reciclaje</h2>
+  <p>¿Qué materiales reciclas más en tu casa?</p>
+
+  <form onsubmit="enviarEncuesta(event)">
+    <label><input type="checkbox" name="opcion" value="Plástico"> Plástico</label><br>
+    <label><input type="checkbox" name="opcion" value="Papel"> Papel</label><br>
+    <label><input type="checkbox" name="opcion" value="Vidrio"> Vidrio</label><br>
+    <label><input type="checkbox" name="opcion" value="Metal"> Metal</label><br>
+    <label><input type="checkbox" name="opcion" value="Orgánicos"> Orgánicos</label><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p id="respuestaEncuesta"></p>
+</section>
+
+<script>
+  function enviarEncuesta(event) {
+    event.preventDefault(); // evita recargar la página
+    let seleccionados = [];
+    document.querySelectorAll('input[name="opcion"]:checked').forEach(el => {
+      seleccionados.push(el.value);
+    });
+
+    if (seleccionados.length === 0) {
+      document.getElementById("respuestaEncuesta").innerText =
+        "⚠️ Por favor selecciona al menos una opción.";
+    } else {
+      document.getElementById("respuestaEncuesta").innerText =
+        "✅ Gracias por participar. Tú reciclas: " + seleccionados.join(", ");
+    }
+  }
+</script>
