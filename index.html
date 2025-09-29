@@ -103,3 +103,26 @@
     }
   }
 </script>
+<section id="reto">
+  <h2>♻️ Reto de Reciclaje</h2>
+  <p>¿Dónde debes reciclar una <b>botella de plástico</b>?</p>
+
+  <button onclick="verificarRespuesta('Plástico')">Plástico</button>
+  <button onclick="verificarRespuesta('Papel')">Papel</button>
+  <button onclick="verificarRespuesta('Vidrio')">Vidrio</button>
+  <button onclick="verificarRespuesta('Orgánicos')">Orgánicos</button>
+
+  <p id="respuestaReto"></p>
+</section>
+
+<script>
+  function verificarRespuesta(opcion) {
+    if (opcion === "Plástico") {
+      document.getElementById("respuestaReto").innerText =
+        "✅ ¡Correcto! Las botellas de plástico van en la caneca de reciclaje de plástico.";
+    } else {
+      document.getElementById("respuestaReto").innerText =
+        "❌ No es correcto. Intenta de nuevo.";
+    }
+  }
+</script>
