@@ -1,0 +1,113 @@
+### 1. `index.html`
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco-Guardian ♻️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Eco-Guardian ♻️</h1>
+    <p>Tu app web para aprender y practicar el reciclaje</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Clasificación de residuos</h2>
+      <ul>
+        <li>🟢 Vidrio</li>
+        <li>🔵 Plástico</li>
+        <li>🟡 Papel y cartón</li>
+        <li>⚪ Metal</li>
+        <li>⚫ Orgánicos</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Consejos de reciclaje</h2>
+      <p id="tip">Haz clic en el botón para ver un consejo 🌍</p>
+      <button onclick="mostrarTip()">Ver consejo</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Eco-Guardian © 2025 | Creando conciencia ambiental</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+---
+
+### 2. `style.css`
+```css
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0fdf4;
+  color: #1b4332;
+  text-align: center;
+}
+
+header {
+  background: #2d6a4f;
+  color: white;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #40916c;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1b4332;
+}
+
+footer {
+  margin-top: 20px;
+  background: #2d6a4f;
+  color: white;
+  padding: 10px;
+}
+```
+
+---
+
+### 3. `script.js`
+```javascript
+const tips = [
+  "Separa tus residuos en la fuente.",
+  "Limpia los envases antes de reciclarlos.",
+  "Reduce el consumo de plásticos de un solo uso.",
+  "Reutiliza frascos y botellas de vidrio.",
+  "Haz compost con residuos orgánicos."
+];
+
+function mostrarTip() {
+  const tip = tips[Math.floor(Math.random() * tips.length)];
+  document.getElementById("tip").innerText = tip;
+}
+```
+
+---
