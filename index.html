@@ -51,3 +51,73 @@ Lo que debes subir es un archivo llamado **index.html** con el contenido de tu a
   </main>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Guardián</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f9f0;
+      text-align: center;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+    }
+    button {
+      background-color: #43a047;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2e7d32;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌍 Eco Guardián</h1>
+    <p>Tu aplicación de reciclaje</p>
+  </header>
+
+  <main>
+    <h2>Bienvenido</h2>
+    <p>Con Eco Guardián puedes aprender a reciclar y cuidar el planeta.</p>
+    <button onclick="reciclar()">♻️ Reciclar Ahora</button>
+    <p id="resultado"></p>
+  </main>
+
+  <script>
+    let contador = 0;
+    const mensajes = [
+      "🌱 Gracias por reciclar, estás salvando árboles.",
+      "💧 Reciclar ayuda a ahorrar agua.",
+      "⚡ Con tu acción ahorras energía para el planeta.",
+      "♻️ Cada pequeño gesto cuenta. ¡Sigue reciclando!"
+    ];
+
+    function reciclar() {
+      contador++;
+      const random = Math.floor(Math.random() * mensajes.length);
+      document.getElementById("resultado").innerHTML =
+        mensajes[random] + "<br><br>Has reciclado " + contador + " veces.";
+    }
+  </script>
+</body>
